@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'cookingforyou.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dautarim_cookingforyou',
-        'USER': 'dautarim_root',
-        'PASSWORD': '8f#8c,H*',
+        'NAME': 'cookingforyou',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': 'localhost',
     }
 }
