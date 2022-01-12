@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'cookingforyou.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cookingforyou',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'dautarim_cookingforyou',
+        'USER': 'dautarim_root',
+        'PASSWORD': '8f#8c,H*',
+        'HOST': '192.168.1.1',
     }
 }
 
