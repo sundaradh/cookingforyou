@@ -1,6 +1,7 @@
 from django.urls import path   
 from . import views
 urlpatterns = [
+    path("",views.index, name="shop Home"),
     path('',views.recipeOverview,name='recipeOverview'),
     path('recipe-list/', views.ShowAll, name='recipe-list'),
     path('recipe-detail/<int:pk>/', views.ViewRecipe, name='recipe-detail'),
