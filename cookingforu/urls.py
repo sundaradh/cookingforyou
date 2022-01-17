@@ -1,4 +1,6 @@
 from django.urls import path   
+from .views import RegisterAPI
+from .views import UserRegister
 from . import views
 urlpatterns = [
     path("",views.index, name="shop Home"),
@@ -8,4 +10,6 @@ urlpatterns = [
     path('recipe-create/', views.CreateRecipe, name='recipe-create'),
     path('recipe-update/<int:pk>/', views.updateRecipe, name='recipe-update'),
     path('recipe-delete/<int:pk>/', views.deleteRecipe, name='recipe-delete'),
+    path('api/register/', RegisterAPI.as_view(), name='register'),
+    path('register/', UserRegister.as_view(), name='register-user'),
 ]

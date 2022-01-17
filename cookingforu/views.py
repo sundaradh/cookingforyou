@@ -1,5 +1,4 @@
 from typing import List
-from  knox.models import AuthToken
 from django.http import response
 from django.shortcuts import render
 from rest_framework.response import Response
@@ -7,9 +6,10 @@ from rest_framework.decorators import api_view
 from .serializers import RecipeSerializer
 from .models import Recipe
 from cookingforu.models import Recipe
-from  knox.models import AuthToken
-from rest_framework import generics, permissions
-from .serializers import UserSerializer, RegisterSerializer
+from django.contrib.auth.models import User
+from cookingforu.serializers import UserRegisterSerializer
+from rest_framework import generics
+from rest_framework.permissions import AllowAny
 @api_view(['GET'])
 # Create your views here.
 def index(request):
@@ -67,15 +67,8 @@ def deleteRecipe(request, pk):
     return Response('Items delete successfully!')
 
 
-    class RegisterAPI(generics.GenericAPIView):
-     serializer_class = RegisterSerializer
-
-    def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user = serializer.save()
-        return Response({
-        "user": UserSerializer(user, context=self.get_serializer_context()).data,
-        "token": AuthToken.objects.create(user)[1]
-        })
+class UserRegister(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserRegisterSerializer
+    permissison_class = [AllowAny]
 
