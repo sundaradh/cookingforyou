@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'cookingforu.apps.CookingforuConfig',
     'rest_framework',
     'rest_framework.authtoken',
-    'cookingforyou'
+    
 ]
 
 MIDDLEWARE = [
@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'cookingforyou.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
-        'NAME': 'dautarim_cookingforyou',
-        'USER': 'dautarim_root',
-        'PASSWORD': '8f#8c,H*',
-        'HOST': '192.168.1.1',
+        'NAME': 'cookingforyou',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
     }
 }
 
