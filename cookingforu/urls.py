@@ -3,7 +3,7 @@ from django.urls import path
 from .views import UserRegister
 from . import views
 urlpatterns = [
-   
+
     path('',views.recipeOverview,name='recipeOverview'),
     path('recipe-list/', views.ShowAll, name='recipe-list'),
     path('recipe-detail/<int:pk>/', views.ViewRecipe, name='recipe-detail'),
